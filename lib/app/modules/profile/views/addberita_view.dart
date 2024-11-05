@@ -14,6 +14,16 @@ class BeritaForm extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tambah Berita'),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.refresh),
+            onPressed: () async {
+              // Refresh data kategori
+              controller.resetForm(); // Reset form setelah refresh
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

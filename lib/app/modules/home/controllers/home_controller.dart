@@ -31,6 +31,10 @@ class HomeController extends GetxController {
     }
   }
 
+  Future<void> refreshBeritas() async {
+    fetchBeritas();
+  }
+
   void logout() async {
     try {
       // Hapus token dari GetStorage

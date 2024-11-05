@@ -4,6 +4,7 @@ class Berita {
   final String gambar;
   final String judul;
   final String artikel;
+  final DateTime createdAt;
 
   Berita({
     required this.id,
@@ -11,6 +12,7 @@ class Berita {
     required this.gambar,
     required this.judul,
     required this.artikel,
+    required this.createdAt,
   });
 
   factory Berita.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class Berita {
       gambar: json['gambar_url'],
       judul: json['judul'],
       artikel: json['artikel'],
+      createdAt: DateTime.parse(json['created_at']),
     );
   }
 

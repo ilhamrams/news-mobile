@@ -40,13 +40,14 @@ class AddBerita extends GetxController {
 
       // Buat objek berita dengan menggunakan selectedKategoriId dan path gambar
       final berita = Berita(
-        id: 0,
-        idKategori: selectedKategoriId.value,
-        judul: judulController.text,
-        artikel: artikelController.text,
-        gambar: basename(
-            selectedImage.value!.path), // Sertakan path gambar yang dipilih
-      );
+          id: 0,
+          idKategori: selectedKategoriId.value,
+          judul: judulController.text,
+          artikel: artikelController.text,
+          gambar: basename(selectedImage.value!.path),
+          createdAt: DateTime.now()
+          // Sertakan path gambar yang dipilih
+          );
 
       // Cetak data yang akan dikirim
       print('Data yang dikirim:');
@@ -86,6 +87,13 @@ class AddBerita extends GetxController {
     } finally {
       isLoading.value = false;
     }
+  }
+
+  void resetForm() {
+    selectedKategoriId.value = 0; // Reset dropdown
+    judulController.clear(); // Reset judul
+    artikelController.clear(); // Reset artikel
+    selectedImage.value = null; // Reset gambar
   }
 
   bool _validateForm() {
