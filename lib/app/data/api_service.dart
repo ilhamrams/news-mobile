@@ -10,7 +10,7 @@ import 'models/kategori.dart';
 import 'models/login_response.dart';
 
 class ApiService {
-  final String _baseUrl = 'http://192.168.43.119:8000/api';
+  final String _baseUrl = 'https://ilham.alinea-api.my.id/api/';
   final GetStorage storage = GetStorage();
 
   // Fetch data berita
